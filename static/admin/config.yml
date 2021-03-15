@@ -82,12 +82,12 @@ collections:
     label: "Blog3"
     files: 
       - label: "blog_3"
-      name: blog_3
-      file: site/blog3/blog_3.json
-      fields:
-        - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
-        - {label: "Title", name: "title", widget: "string"}
-        - {label: "Publish Date", name: "date", widget: "datetime"}
-        - {label: "Description", name: "description", widget: "text"}
-        - {label: "Featured Image", name: "featuredimage", widget: image}
-        - {label: "Body", name: "body", widget: "markdown"}
+        name: blog_3
+        file: site/blog3/blog_3.json
+        fields:
+          - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
+          - {label: "Title", name: "title", widget: "string"}
+          - {label: "Publish Date", name: "date", widget: "datetime"}
+          - {label: "Description", name: "description", widget: "text"}
+          - {label: "Featured Image", name: "featuredimage", widget: image}
+          - {label: "Body", name: "body", widget: "markdown"}
