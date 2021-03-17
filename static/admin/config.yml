@@ -69,13 +69,13 @@ collections:
     label: "Blog2"
     folder: "src/pages/blog2"
     create: true
-    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    slug: "Blog2"
     fields:
-      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post2"}
+      - {label: "Template Key", name: "templateKey", widget: "hidden", default: "blog-post"}
       - {label: "Title", name: "title", widget: "string"}
       - {label: "Publish Date", name: "date", widget: "datetime"}
       - {label: "Description", name: "description", widget: "text"}
-      - {label: "Featured Image", name: "featuredimage", widget: image}
+      - {label: "Featured Image", name: "featuredimage", widget: image, required: false}
       - {label: "Body", name: "body", widget: "markdown"}
 
   - name: "blog3"

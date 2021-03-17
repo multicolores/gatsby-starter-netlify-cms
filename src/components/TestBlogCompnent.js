@@ -13,38 +13,36 @@ class TestBlog extends React.Component {
         {posts &&
           posts.map(({ node: post }) => (
             <div className="is-parent column is-6" key={post.id}>
-              <article
-                className={`blog-list-item tile is-child box notification ${
-                  post.frontmatter.featuredpost ? 'is-featured' : ''
-                }`}
-              >
-                <header>
-                  {post.frontmatter.featuredimage ? (
-                    <div className="featured-thumbnail">
-                      <PreviewCompatibleImage
-                        imageInfo={{
-                          image: post.frontmatter.featuredimage,
-                          alt: `featured image thumbnail for post ${post.frontmatter.title}`,
-                        }}
-                      />
-                    </div>
-                  ) : null}
-                  <h1>{post.frontmatter.title}</h1>
-                  <p className="post-meta">
-                    <span className="subtitle is-size-5 is-block">
-                      {post.frontmatter.date}
-                    </span>
+
+              {post.fields.slug.indexOf("Blog2") > 0 ? (
+                <article
+                  className={`blog-list-item tile is-child box notification ${post.frontmatter.featuredpost ? 'is-featured' : ''
+                    }`}
+                >
+                  <header>
+                    <h1>{post.frontmatter.title}{post.fields.slug}</h1>
+                    <p className="post-meta">
+                      <span className="subtitle is-size-5 is-block">
+                        {post.frontmatter.date}
+                      </span>
+                    </p>
+                  </header>
+                  <p>
+                    {post.excerpt}
+                    <br />
+                    <br />
+                    {post.fields.slug == "Blog2" ? "oui" : "non"}
+                    {post.fields.slug.indexOf("Blog2") > 0 ? "oui" : "non"}
                   </p>
-                </header>
-                <p>
-                  {post.excerpt}
-                  <br />
-                  <br />
-                  <Link className="button" to={post.fields.slug}>
-                    Keep Reading →
-                  </Link>
-                </p>
-              </article>
+                  <p>
+                    {post.fields.slug == "Blog2" ? console.log("oui") : console.log("non")}
+                  </p>
+                </article>
+
+              ) : null}
+
+
+
             </div>
           ))}
       </div>
